@@ -276,9 +276,11 @@ int main(){
 	initialize(st);
 	i=0;
 	while(!feof(fp)){
-		operation[i]=(char*)malloc(sizeof(char)*50);
-		fgets(operation[i],50,fp);
-		i=i+1;
+		operation[i]=(char*)malloc(sizeof(char)*250);
+		fgets(operation[i],250,fp);
+		if(isalpha(operation[i][0]) && operation[i][1]==' '){
+			i=i+1;
+		}
 	}
 	n=i;
 	variables=(int*)malloc(sizeof(int)*n);
